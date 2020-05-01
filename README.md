@@ -11,6 +11,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
+  <a href="https://github.com/BrunoViveiros/github-explorer">
+    <img src="./images/demo.gif" alt="Logo">
+  </a>
   <p align="center">
     Salve seus repositorios preferidos com o GithubExplorer.
   </p>
@@ -19,6 +22,7 @@
 <!-- ABOUT THE PROJECT -->
 
 # Sobre o Projeto
+
 
 
 
