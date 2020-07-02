@@ -14,7 +14,6 @@ const Header: React.FC<Props> = ({ toggleTheme }: Props) => {
   const { title, logoImage } = useContext(ThemeContext);
   const location = useLocation();
   const path = location.pathname.replace(/\//g, '');
-  console.log(path);
 
   return (
     <Container>
