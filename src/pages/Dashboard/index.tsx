@@ -1,9 +1,8 @@
-import React, { useState, useEffect, FormEvent } from 'react';
+import React, { useState, useEffect, useCallback, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { FiChevronRight } from 'react-icons/fi';
-import api from '../../services/api';
 
-import logoImg from '../../assets/logo.svg';
+import api from '../../services/api';
 
 import { Title, Form, Repositories, Error } from './styles';
 
@@ -37,32 +36,32 @@ const Dashboard: React.FC = () => {
     );
   }, [repositories]);
 
-  async function handleAddRepository(
-    event: FormEvent<HTMLFormElement>,
-  ): Promise<void> {
-    event.preventDefault();
+  const handleAddRepository = useCallback(
+    async (event: FormEvent<HTMLFormElement>): Promise<void> => {
+      event.preventDefault();
 
-    if (!newRepo) {
-      setInputError('Digite o autor/nome do repositório');
-      return;
-    }
+      if (!newRepo) {
+        setInputError('Digite o autor/nome do repositório');
+        return;
+      }
 
-    try {
-      const response = await api.get<Repository>(`repos/${newRepo}`);
+      try {
+        const response = await api.get<Repository>(`repos/${newRepo}`);
 
-      const repository = response.data;
+        const repository = response.data;
 
-      setRepositories([...repositories, repository]);
-      setNewRepo('');
-      setInputError('');
-    } catch (err) {
-      setInputError('Erro na busca por esse repositório');
-    }
-  }
+        setRepositories([...repositories, repository]);
+        setNewRepo('');
+        setInputError('');
+      } catch (err) {
+        setInputError('Erro na busca por esse repositório');
+      }
+    },
+    [newRepo, repositories],
+  );
 
   return (
     <>
-      <img src={logoImg} alt="Github Explorer" />
       <Title>Explore repositórios no Github</Title>
 
       <Form hasError={!!inputError} onSubmit={handleAddRepository}>

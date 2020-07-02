@@ -7,7 +7,7 @@ interface FormProps {
 
 export const Title = styled.h1`
   font-size: 48px;
-  color: #3a3a3a;
+  color: ${({ theme }) => theme.colors.primaryText};
   max-width: 450px;
   line-height: 56px;
 
@@ -26,39 +26,40 @@ export const Form = styled.form<FormProps>`
     padding: 0 24px;
     border: 0;
     border-radius: 5px 0 0 5px;
-    color: #3a3a3a;
-    border: 2px solid #fff;
+    color: ${({ theme }) => theme.colors.primaryText};
+    background: ${({ theme }) => theme.colors.primary};
+    border: 2px solid ${({ theme }) => theme.colors.primary};
     border-right: 0;
     ${(props) =>
       props.hasError &&
       css`
-        border-color: #c53030;
+        border-color: ${({ theme }) => theme.colors.error};
       `}
 
     &::placeholder {
-      color: #a8a8b3;
+      color: ${({ theme }) => theme.colors.secondaryText};
     }
   }
 
   button {
     width: 210px;
     height: 70px;
-    background: #04d361;
+    background: ${({ theme }) => theme.colors.secondary};
     border: 0;
     border-radius: 0 5px 5px 0;
-    color: #fff;
+    color: #f4ede8;
     font-weight: bold;
     transition: background-color 0.2s;
 
     &:hover {
-      background: ${shade(0.2, '#04d361')};
+      background: ${({ theme }) => shade(0.2, theme.colors.secondary)};
     }
   }
 `;
 
 export const Error = styled.span`
   display: block;
-  color: #c53030;
+  color: ${({ theme }) => theme.colors.error};
   margin-top: 8px;
 `;
 
@@ -67,7 +68,7 @@ export const Repositories = styled.div`
   max-width: 700px;
 
   a {
-    background: #fff;
+    background: ${({ theme }) => theme.colors.primary};
     border-radius: 5px;
     width: 100%;
     padding: 24px;
@@ -98,19 +99,19 @@ export const Repositories = styled.div`
 
       strong {
         font-size: 20px;
-        color: #3d3d4d;
+        color: ${({ theme }) => theme.colors.primaryText};
       }
 
       p {
         font-size: 18px;
-        color: #a8a8b3;
+        color: ${({ theme }) => theme.colors.secondaryText};
         margin-top: 4px;
       }
     }
 
     svg {
       margin-left: auto;
-      color: #cbcbd6;
+      color: ${({ theme }) => theme.colors.secondaryText};
     }
   }
 `;

@@ -1,26 +1,5 @@
 import styled from 'styled-components';
-
-export const Header = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #a8a8b3;
-    transition: color 0.2s;
-
-    &:hover {
-      color: #666;
-    }
-
-    svg {
-      margin-right: 4px;
-    }
-  }
-`;
+import { shade } from 'polished';
 
 export const RepositoryInfo = styled.section`
   margin-top: 80px;
@@ -40,12 +19,12 @@ export const RepositoryInfo = styled.section`
 
       strong {
         font-size: 36px;
-        color: #3d3d4d;
+        color: ${({ theme }) => theme.colors.primaryText};
       }
 
       p {
         font-size: 18px;
-        color: #737380;
+        color: ${({ theme }) => shade(0.3, theme.colors.secondaryText)};
         margin-top: 4px;
       }
     }
@@ -64,13 +43,13 @@ export const RepositoryInfo = styled.section`
       strong {
         display: block;
         font-size: 36px;
-        color: #3d3d4d;
+        color: ${({ theme }) => theme.colors.primaryText};
       }
 
       span {
         display: block;
         margin-top: 4px;
-        color: #6c6c80;
+        color: ${({ theme }) => shade(0.3, theme.colors.secondaryText)};
       }
     }
   }
@@ -80,7 +59,7 @@ export const Issues = styled.div`
   margin-top: 80px;
 
   a {
-    background: #fff;
+    background: ${({ theme }) => theme.colors.primary};
     border-radius: 5px;
     width: 100%;
     padding: 24px;
@@ -105,19 +84,19 @@ export const Issues = styled.div`
 
       strong {
         font-size: 20px;
-        color: #3d3d4d;
+        color: ${({ theme }) => theme.colors.primaryText};
       }
 
       p {
         font-size: 18px;
-        color: #a8a8b3;
+        color: ${({ theme }) => theme.colors.secondaryText};
         margin-top: 4px;
       }
     }
 
     svg {
       margin-left: auto;
-      color: #cbcbd6;
+      color: ${({ theme }) => theme.colors.secondaryText};
     }
   }
 `;
