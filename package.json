@@ -1,6 +1,6 @@
 {
-  "name": "05-primeiro-projeto-react",
-  "homepage": "http://brunoviveiros.github.io/github-explorer",
+  "name": "github-explorer",
+  "homepage": "http://BrunoViveiros.github.io/github-explorer",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
