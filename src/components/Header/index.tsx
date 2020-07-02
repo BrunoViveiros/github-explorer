@@ -13,11 +13,13 @@ interface Props {
 const Header: React.FC<Props> = ({ toggleTheme }: Props) => {
   const { title, logoImage } = useContext(ThemeContext);
   const location = useLocation();
+  const path = location.pathname.replace(/\//g, '');
+  console.log(path);
 
   return (
     <Container>
       <img src={logoImage} alt="Github Explorer" />
-      {location.pathname === '/github-explorer' ? (
+      {path === 'github-explorer' ? (
         <ThemeSwitchContainer>
           <FiMoon />
           <Switch
