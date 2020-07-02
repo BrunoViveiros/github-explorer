@@ -1,6 +1,10 @@
 {
   "name": "github-explorer",
+<<<<<<< HEAD
   "homepage": "http://BrunoViveiros.github.io/github-explorer",
+=======
+  "homepage": "http://brunoviveiros.github.io/github-explorer",
+>>>>>>> 2912c9ebcfb25c8477c799aa085c0e0909fea5c4
   "version": "0.1.0",
   "private": true,
   "dependencies": {
