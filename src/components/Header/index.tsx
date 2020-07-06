@@ -20,7 +20,8 @@ const Header: React.FC<Props> = ({ toggleTheme }: Props) => {
       <img src={logoImage} alt="Github Explorer" />
       {path === 'github-explorer' ? (
         <ThemeSwitchContainer>
-          <FiMoon />
+          <FiSun />
+
           <Switch
             onChange={toggleTheme}
             checked={title === 'dark'}
@@ -32,7 +33,8 @@ const Header: React.FC<Props> = ({ toggleTheme }: Props) => {
             height={10}
             handleDiameter={20}
           />
-          <FiSun />
+
+          <FiMoon />
         </ThemeSwitchContainer>
       ) : (
         <Link to="/github-explorer">

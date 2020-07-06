@@ -27,15 +27,15 @@ export const ThemeSwitchContainer = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  svg:first-child {
-    margin-right: 10px;
+  svg:last-child {
+    margin-left: 10px;
     color: ${({ theme }) => theme.colors.moonColor};
     fill: ${({ theme }) => theme.colors.moonColor};
     filter: drop-shadow(0px 0px 10px ${({ theme }) => theme.colors.moonColor});
   }
 
-  svg:last-child {
-    margin-left: 10px;
+  svg:first-child {
+    margin-right: 10px;
     color: ${({ theme }) => theme.colors.sunColor};
     fill: ${({ theme }) => theme.colors.sunColor};
     filter: drop-shadow(0px 0px 5px ${({ theme }) => theme.colors.sunColor});

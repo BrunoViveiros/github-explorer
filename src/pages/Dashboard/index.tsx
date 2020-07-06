@@ -1,10 +1,17 @@
 import React, { useState, useEffect, useCallback, FormEvent } from 'react';
-import { Link } from 'react-router-dom';
-import { FiChevronRight } from 'react-icons/fi';
+import { FiChevronDown, FiChevronRight } from 'react-icons/fi';
 
+import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
-import { Title, Form, Repositories, Error } from './styles';
+import {
+  Title,
+  Form,
+  Users,
+  Error,
+  UserContainer,
+  UserRepositories,
+} from './styles';
 
 interface Repository {
   full_name: string;
@@ -74,25 +81,44 @@ const Dashboard: React.FC = () => {
       </Form>
       {inputError && <Error>{inputError}</Error>}
 
-      <Repositories>
-        {repositories.map((repository) => (
-          <Link
-            key={repository.full_name}
-            to={`/repositories/${repository.full_name}`}
-          >
+      <Users>
+        <UserContainer>
+          <button type="button">
             <img
-              src={repository.owner.avatar_url}
-              alt={repository.owner.login}
+              src="https://avatars1.githubusercontent.com/u/27422266?v=4"
+              alt="Eu"
             />
             <div>
-              <strong>{repository.full_name}</strong>
-              <p>{repository.description}</p>
+              <strong>BrunoViveiros</strong>
+              <p>A javascript enthusiast.</p>
             </div>
 
-            <FiChevronRight size={20} />
-          </Link>
-        ))}
-      </Repositories>
+            <FiChevronDown size={20} />
+          </button>
+
+          <UserRepositories>
+            <Link to="/repositories/brunoviveiros/github-explorer">
+              <img src="https://via.placeholder.com/300?text=A" alt="Eu" />
+              <div>
+                <strong>BrunoViveiros/github-explorer</strong>
+                <p>Salve seus repositorios preferidos com o GithubExplorer.</p>
+              </div>
+
+              <FiChevronRight size={20} />
+            </Link>
+
+            <Link to="/repositories/brunoviveiros/github-explorer">
+              <img src="https://via.placeholder.com/300?text=A" alt="Eu" />
+              <div>
+                <strong>BrunoViveiros/github-explorer</strong>
+                <p>Salve seus repositorios preferidos com o GithubExplorer.</p>
+              </div>
+
+              <FiChevronRight size={20} />
+            </Link>
+          </UserRepositories>
+        </UserContainer>
+      </Users>
     </>
   );
 };

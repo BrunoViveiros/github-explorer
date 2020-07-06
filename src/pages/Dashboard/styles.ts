@@ -63,12 +63,20 @@ export const Error = styled.span`
   margin-top: 8px;
 `;
 
-export const Repositories = styled.div`
+export const Users = styled.div`
   margin-top: 80px;
   max-width: 700px;
+`;
 
-  a {
+export const UserContainer = styled.div`
+  margin-top: 16px;
+  border-radius: 5px;
+  background: ${({ theme }) => theme.colors.primary};
+
+  button {
     background: ${({ theme }) => theme.colors.primary};
+    text-align: left;
+    border: none;
     border-radius: 5px;
     width: 100%;
     padding: 24px;
@@ -79,12 +87,8 @@ export const Repositories = styled.div`
     align-items: center;
     transition: transform 0.2s;
 
-    & + a {
-      margin-top: 16px;
-    }
-
     &:hover {
-      transform: translateX(10px);
+      transform: translateY(-5px);
     }
 
     img {
@@ -104,6 +108,59 @@ export const Repositories = styled.div`
 
       p {
         font-size: 18px;
+        color: ${({ theme }) => theme.colors.secondaryText};
+        margin-top: 4px;
+      }
+    }
+
+    svg {
+      margin-left: auto;
+      color: ${({ theme }) => theme.colors.secondaryText};
+    }
+  }
+`;
+
+export const UserRepositories = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  padding: 0px 20px 20px 20px;
+
+  a {
+    margin-bottom: 5px;
+    background: ${({ theme }) => theme.colors.background};
+    border-radius: 5px;
+    width: 100%;
+    padding: 16px;
+    display: block;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: translateX(10px);
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    div {
+      margin: 0 16px;
+      flex: 1;
+
+      strong {
+        font-size: 18px;
+        color: ${({ theme }) => theme.colors.primaryText};
+      }
+
+      p {
+        font-size: 16px;
         color: ${({ theme }) => theme.colors.secondaryText};
         margin-top: 4px;
       }
